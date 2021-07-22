@@ -36,8 +36,6 @@ $menu['schoolsetup']['admin'] = array(
                                                 'schoolsetup/Rooms.php'=>_rooms,
                          1=>_school,
                         'schoolsetup/Schools.php'=>_schoolInformation,
-						'schoolsetup/Schools.php?new_school=true'=>_addASchool,
-						'schoolsetup/CopySchool.php'=>_copySchool,
 						'schoolsetup/SystemPreference.php'=>_systemPreference,
                                                 'schoolsetup/SchoolCustomFields.php'=>_schoolCustomFields,
                          2=>_courses,

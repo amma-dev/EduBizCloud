@@ -94,9 +94,8 @@ require_once('functions/langFnc.php');
 
                 <div class="panel-heading">
                     <div class="logo">
-                        <img src="assets/images/opensis_logo.png" alt="openSIS" />
+                        <img src="assets/images/opensis_logo.png" width="100%" alt="openSIS" />
                     </div>                    
-                    <h3><?= _studentInformationSystem ?></h3>
                 </div>
                 <div class="panel-body">
 
@@ -216,8 +215,7 @@ require_once('functions/langFnc.php');
                 </div>-->
             </div>
             <footer>
-                <!-- openSisIsAProductOfOpenSolutionsForEducationInc. (<a href="http://www.os4ed.com">OS4ED</a>) and is licensed under the <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPL license</a>. -->
-                <?= _footerText ?>
+              
             </footer>
 
         </div>

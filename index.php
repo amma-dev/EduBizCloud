@@ -589,15 +589,17 @@ if (optional_param('modfunc', '', PARAM_ALPHA) == 'create_account') {
 }
 
 if (!$_SESSION['STAFF_ID'] && !$_SESSION['STUDENT_ID'] && $_REQUEST['modfunc'] != 'create_account') {
+    
     //Login
     require "LoginInc.php";
 } elseif ($_REQUEST['modfunc'] != 'create_account') {
+    $schools = DBGet(DBQuery("SELECT * FROM schools"));
+    $schools = $schools[1];
     echo '<!DOCTYPE html>';
     echo '<html>';
     echo '<head>';
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">';
-    echo '<TITLE>' . Config('TITLE') . '</TITLE>';
-    echo '<link rel="shortcut icon" href="favicon.ico">';
+    echo '<TITLE>' . $schools['TITLE'] . '</TITLE>';
     echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
     echo '<noscript><META http-equiv=REFRESH content="0;url=EnableJavascript.php" /></noscript>';

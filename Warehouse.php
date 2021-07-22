@@ -62,11 +62,12 @@ if (WAREHOUSE_PHP == 0) {
 
     function Warehouse($mode, $extra = '') {
         global $__SHOW_FOOTER, $_openSIS;
-
+        $schools = DBGet(DBQuery("SELECT * FROM schools"));
+        $schools = $schools[1];
         switch ($mode) {
             case 'header':
                 echo "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">";
-                echo "<title>" . Config('TITLE') . "</title><link rel=\"shortcut icon\" href=\"favicon.ico\">";
+                echo "<title>" . $schools['TITLE'] . "</title>";
                 //echo '<link href="assets/css/export_print.css" rel="stylesheet" type="text/css">';
 
                 if (basename($_SERVER['PHP_SELF']) != 'index.php' && basename($_SERVER['PHP_SELF']) != 'Ajax.php')

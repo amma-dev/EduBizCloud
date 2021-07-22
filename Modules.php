@@ -249,11 +249,7 @@ if (User('PROFILE') != 'teacher') {
                         ";
 
     if (User('PROFILE') == 'admin') {
-        $RET = DBGet(DBQuery("SELECT DISTINCT s.ID,s.TITLE FROM schools s,staff st INNER JOIN staff_school_relationship ssr USING(staff_id) WHERE s.id=ssr.school_id AND st.staff_id=$_SESSION[STAFF_ID] ORDER BY s.TITLE asc"));
-        echo "<SELECT class=\"select-search\" name=school onChange='this.form.submit();'>";
-        foreach ($RET as $school)
-            echo "<OPTION  style='padding-right:8px;' value=$school[ID]" . ((UserSchool() == $school['ID']) ? ' SELECTED' : '') . ">" . $school['TITLE'] . "</OPTION>";
-        echo "</SELECT>";
+        
     }
 
     if (User('PROFILE') == 'parent') {
@@ -1120,22 +1116,7 @@ echo '</div>
         
 
         <!-- Footer -->
-        <div class="navbar footer">
-            <div class="navbar-collapse" id="footer">
-                <div class="row">
-                    <div class="col-md-9">
-                        <div class="navbar-text">
-                            '._footerText.'
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="version-info">
-                            Version <b>' . $get_app_details[1][VALUE] . '</b>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
         <!-- /footer -->';
 
 echo "</body>";
